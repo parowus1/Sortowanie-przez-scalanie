@@ -37,12 +37,23 @@ void MergeSort::merge(std::vector<int>& array, int left, int middle, int right) 
 
 }
 
-void MergeSort::sort(std::vector<int>& array, int left, int right) {    //implementacja funkcji rekurencyjnej sort, która sortuje tablicę od lewej do prawej.
-int size = array.size();
+void MergeSort::sort(std::vector<int>& array) {        //Jeśli tablica zawiera mniej niż dwa elementy, funkcja sortująca nic nie robi, ponieważ tablica już jest posortowana.
+    int size = array.size();
     if (size <= 1) {
         return;
     }
-    
+
     sort(array, 0, size - 1);
+}
+
+void MergeSort::sort(std::vector<int>& array, int left, int right) {   //implementacja funkcji rekurencyjnej sort, która sortuje tablicę od lewej do prawej.
+    if (left < right) {                                                
+        int middle = left + (right - left) / 2;
+
+        sort(array, left, middle);                            ////Sprawdzamy, czy podtablica jest większa niż jeden element. Jeśli tak, obliczamy środek tablicy i rekurencyjnie sortujemy lewą i prawą połowę tablicy.
+        sort(array, middle + 1, right);
+
+        merge(array, left, middle, right);                //Następnie łączymy te dwie posortowane podtablice, używając funkcji merge.
+    }
 }
 
