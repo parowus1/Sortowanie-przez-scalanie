@@ -1,3 +1,5 @@
+#include "MergeSort.h"
+
 void MergeSort::merge(std::vector<int>& array, int left, int middle, int right) {
     int n1 = middle - left + 1;  //W funkcji merge, pierwsza podtablica jest od left +1 do middle, a druga od middle do right.
     int n2 = right - middle;     //n1 i n2 określają długość pierwszej i drugiej podtablicy
