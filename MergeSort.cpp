@@ -35,3 +35,14 @@ void MergeSort::merge(std::vector<int>& array, int left, int middle, int right) 
         k++;
     }
 
+}
+
+void MergeSort::sort(std::vector<int>& array, int left, int right) {    //implementacja funkcji rekurencyjnej sort, która sortuje tablicę od lewej do prawej.
+int size = array.size();
+    if (size <= 1) {
+        return;
+    }
+    
+    sort(array, 0, size - 1);
+}
+
