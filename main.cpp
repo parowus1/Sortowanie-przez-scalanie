@@ -23,3 +23,15 @@ int main() {
         std::cout << num << " ";
     }
     std::cout << std::endl;
+
+    
+MergeSort::sort(array);
+
+    std::cout << "Tablica po sortowaniu: ";
+    for (int num : array) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
