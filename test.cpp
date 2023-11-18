@@ -106,3 +106,22 @@ TEST(SiodmyTest, TestTablicaJedenElement) {
 	// Sprawdź, czy tablica pozostaje niezmieniona
 	EXPECT_EQ(1, array[0]);
 }
+
+TEST(OsmyTest, TestTablicaDuplikaty) {
+	// Przykładowa tablica z duplikatami
+    std::vector<int> array = { 1, 2, 2, 3, 3, 3, 4, 5, 5 };
+
+    // Wywołaj funkcję sortującą
+    MergeSort::sort(array);
+
+    // Sprawdź, czy tablica jest posortowana
+    EXPECT_EQ(1, array[0]);
+    EXPECT_EQ(2, array[1]);
+    EXPECT_EQ(2, array[2]);
+    EXPECT_EQ(3, array[3]);
+    EXPECT_EQ(3, array[4]);
+    EXPECT_EQ(3, array[5]);
+    EXPECT_EQ(4, array[6]);
+    EXPECT_EQ(5, array[7]);
+    EXPECT_EQ(5, array[8]);
+    }
