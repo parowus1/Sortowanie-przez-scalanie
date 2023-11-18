@@ -208,3 +208,25 @@ TEST(DwunastyTest, TestDuzaTablica) {
         EXPECT_LE(array[i - 1], array[i]);
     }
 }
+
+TEST(TrzynastyTest, TestDuzaMieszanaTablica) {
+
+    // Generuj losową tablicę liczb
+    std::vector<int> array;
+    const int size = 120; // Rozmiar tablicy
+
+    for (int i = 0; i < size; ++i) {
+        array.push_back(rand() % 200 - 100); //Zakres tablicy
+    }
+
+    // Skopiuj tablicę przed sortowaniem
+    std::vector<int> originalArray = array;
+
+    // Wywołaj funkcję sortującą
+    MergeSort::sort(array);
+
+    // Sprawdź, czy tablica jest posortowana rosnąco
+    for (size_t i = 1; i < array.size(); ++i) {
+        EXPECT_LE(array[i - 1], array[i]);
+    }
+}
