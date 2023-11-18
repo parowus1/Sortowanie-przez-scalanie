@@ -95,3 +95,14 @@ TEST(SzostyTest, TestPustaTablica) {
     // Sprawdź, czy tablica pozostaje pusta po sortowaniu
     EXPECT_TRUE(array.empty()); 
 }
+
+TEST(SiodmyTest, TestTablicaJedenElement) {
+	// Przykładowa tablica z jednym elementem
+	std::vector<int> array = { 1, 2 };
+
+	// Wywołaj funkcję sortującą
+	MergeSort::sort(array);
+
+	// Sprawdź, czy tablica pozostaje niezmieniona
+	EXPECT_EQ(1, array[0]);
+}
