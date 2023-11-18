@@ -65,3 +65,22 @@ TEST(CzwartyTest, TestUjemnaTablica) {
     EXPECT_EQ(-2, array[7]);
     EXPECT_EQ(-1, array[8]);
 }
+
+TEST(PiatyTest, TestMieszanaTablica) {
+    // Przykładowa tablica z liczbami ujemnymi i dodatnimi
+    std::vector<int> array = { -5, 3, 0, -2, 7, -1, 8, -4, 2 };
+
+    // Wywołaj funkcję sortującą
+    MergeSort::sort(array);
+
+    // Sprawdź, czy tablica jest posortowana
+    EXPECT_EQ(-5, array[0]); 
+    EXPECT_EQ(-4, array[1]);
+    EXPECT_EQ(-2, array[2]);
+    EXPECT_EQ(-1, array[3]);
+    EXPECT_EQ(0, array[4]);
+    EXPECT_EQ(2, array[5]);
+    EXPECT_EQ(3, array[6]);
+    EXPECT_EQ(7, array[7]);
+    EXPECT_EQ(8, array[8]);
+}
