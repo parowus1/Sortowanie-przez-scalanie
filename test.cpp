@@ -186,3 +186,25 @@ TEST(JedenastyTest, TestTablicaDwaElementyRosnace) {
         EXPECT_EQ(originalArray[i], array[i]);
     }
 }
+
+TEST(DwunastyTest, TestDuzaTablica) {
+
+    // Generuj losową tablicę liczb
+    std::vector<int> array;
+    const int size = 120; // Rozmiar tablicy
+
+    for (int i = 0; i < size; ++i) {
+        array.push_back(rand() % 120); // Zakres tablicy
+    }
+
+    // Skopiuj tablicę przed sortowaniem
+    std::vector<int> originalArray = array;
+
+    // Wywołaj funkcję sortującą
+    MergeSort::sort(array);
+
+    // Sprawdź, czy tablica jest posortowana rosnąco
+    for (size_t i = 1; i < array.size(); ++i) {
+        EXPECT_LE(array[i - 1], array[i]);
+    }
+}
