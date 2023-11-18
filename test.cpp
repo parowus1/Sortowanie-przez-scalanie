@@ -124,4 +124,42 @@ TEST(OsmyTest, TestTablicaDuplikaty) {
     EXPECT_EQ(4, array[6]);
     EXPECT_EQ(5, array[7]);
     EXPECT_EQ(5, array[8]);
+}
+
+TEST(DziewiatyTest, TestTablicaUjemneDuplikaty) {
+    // Przykładowa tablica z ujemnymi duplikatami
+	std::vector<int> array = { -5, -3, -3, -2, -2, -2, -1, -1, -1 };
+
+	// Wywołaj funkcję sortującą
+	MergeSort::sort(array);
+
+	// Sprawdź, czy tablica jest posortowana
+	EXPECT_EQ(-5, array[0]);
+	EXPECT_EQ(-3, array[1]);
+	EXPECT_EQ(-3, array[2]);
+	EXPECT_EQ(-2, array[3]);
+	EXPECT_EQ(-2, array[4]);
+	EXPECT_EQ(-2, array[5]);
+	EXPECT_EQ(-1, array[6]);
+	EXPECT_EQ(-1, array[7]);
+	EXPECT_EQ(-1, array[8]);
+}
+
+TEST(DziesiatyTest, TestTablicaDodatnieUjemneDuplikaty) {
+    // Przykładowa tablica z dodatnimi, ujemnymi oraz duplikatami
+    std::vector<int> array = { -5, -3, 0, 2, 7, -1, 8, -4, 2 };
+
+    // Wywołaj funkcję sortującą
+    MergeSort::sort(array);
+
+    // Sprawdź, czy tablica jest posortowana
+    EXPECT_EQ(-5, array[0]);
+    EXPECT_EQ(-4, array[1]);
+    EXPECT_EQ(-3, array[2]);
+    EXPECT_EQ(-1, array[3]);
+    EXPECT_EQ(0, array[4]);
+    EXPECT_EQ(2, array[5]);
+    EXPECT_EQ(2, array[6]);
+    EXPECT_EQ(7, array[7]);
+    EXPECT_EQ(8, array[8]);
     }
