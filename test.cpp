@@ -84,3 +84,14 @@ TEST(PiatyTest, TestMieszanaTablica) {
     EXPECT_EQ(7, array[7]);
     EXPECT_EQ(8, array[8]);
 }
+
+TEST(SzostyTest, TestPustaTablica) {
+    // Przykładowa pusta tablica
+    std::vector<int> array = {};
+
+    // Wywołaj funkcję sortującą na pustej tablicy
+    ASSERT_NO_THROW(MergeSort::sort(array)); //sprawdza, czy nie występują żadne wyjątki podczas wywoływania funkcji sortującej
+
+    // Sprawdź, czy tablica pozostaje pusta po sortowaniu
+    EXPECT_TRUE(array.empty()); 
+}
