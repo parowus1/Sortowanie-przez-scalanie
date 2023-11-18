@@ -27,3 +27,22 @@ TEST(DrugiTest, TestOdwrotniePosortowanaTablica) {
         EXPECT_LE(array[i - 1], array[i]);  //
     }
 }
+
+TEST(TrzeciTest, TestLosowaTablica) {
+    // Przykładowa tablica z losowymi liczbami
+	std::vector<int> array = { 5, 3, 0, 2, 7, 1, 8, 4, 2 };
+
+	// Wywołaj funkcję sortującą
+	MergeSort::sort(array);
+
+	// Sprawdź, czy tablica jest posortowana
+	EXPECT_EQ(0, array[0]);
+	EXPECT_EQ(1, array[1]);
+	EXPECT_EQ(2, array[2]);
+	EXPECT_EQ(2, array[3]);
+	EXPECT_EQ(3, array[4]);
+	EXPECT_EQ(4, array[5]);
+	EXPECT_EQ(5, array[6]);
+	EXPECT_EQ(7, array[7]);
+	EXPECT_EQ(8, array[8]);
+}
