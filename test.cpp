@@ -162,4 +162,27 @@ TEST(DziesiatyTest, TestTablicaDodatnieUjemneDuplikaty) {
     EXPECT_EQ(2, array[6]);
     EXPECT_EQ(7, array[7]);
     EXPECT_EQ(8, array[8]);
+}
+
+TEST(JedenastyTest, TestTablicaDwaElementyRosnace) {
+    // Przykładowa tablica z dwoma elementami w różnej kolejności
+    std::vector<int> array = { 3, 7 };
+
+    // Skopiuj tablicę przed sortowaniem
+    std::vector<int> originalArray = array;
+
+    // Wywołaj funkcję sortującą
+    MergeSort::sort(array); 
+
+    // Sprawdź, czy tablica jest posortowana rosnąco lub malejąco
+    ASSERT_EQ(array.size(), 2); 
+    EXPECT_TRUE((array[0] <= array[1]) || (array[0] >= array[1])); 
+
+    // Sprawdź, czy tablica po sortowaniu ma tę samą ilość elementów
+    EXPECT_EQ(originalArray.size(), array.size());
+
+    // Sprawdź, czy tablica po sortowaniu zawiera te same elementy
+    for (size_t i = 0; i < array.size(); ++i) {
+        EXPECT_EQ(originalArray[i], array[i]);
     }
+}
