@@ -17,7 +17,7 @@ TEST(PierwszyTest, TestNiezmienionaPosortowanaTablica) {
 
 TEST(DrugiTest, TestOdwrotniePosortowanaTablica) {
     // Przykładowa tablica posortowana w odwrotnej kolejności
-    std::vector<int> array = { 9, 8, 7, 6, 5, 4, 3, 2, 2 };
+    std::vector<int> array = { 9, 8, 7, 6, 5, 4, 3, 2, 1 };
 
     // Wywołaj funkcję sortującą
     MergeSort::sort(array);
@@ -98,11 +98,14 @@ TEST(SzostyTest, TestPustaTablica) {
 
 TEST(SiodmyTest, TestTablicaJedenElement) {
 	// Przykładowa tablica z jednym elementem
-	std::vector<int> array = { 1, 2 };
+	std::vector<int> array = { 1 };
 
 	// Wywołaj funkcję sortującą
 	MergeSort::sort(array);
 
+	// Oczekujemy, że tablica ma tylko jeden element
+        ASSERT_EQ(1, array.size()); 
+	
 	// Sprawdź, czy tablica pozostaje niezmieniona
 	EXPECT_EQ(1, array[0]);
 }
